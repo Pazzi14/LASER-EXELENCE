@@ -1,31 +1,30 @@
-// Salve este arquivo como js/scroll-animations.js
-
+// Este arquivo gerencia animações de rolagem (ex: "fade-in-on-scroll")
 document.addEventListener('DOMContentLoaded', () => {
-    if (typeof ScrollReveal !== 'undefined') {
-        const sr = ScrollReveal({
-            distance: '20px',
-            duration: 800,
-            easing: 'cubic-bezier(.17,.67,.83,.67)',
-            mobile: false, // Desativa em mobile para melhor performance
-            reset: false,  // Não repete
-        });
+    if ('IntersectionObserver' in window) {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1 // Ativa quando 10% do elemento está visível
+        };
 
-        // Revela elementos com o atributo data-scroll-reveal
-        sr.reveal('[data-scroll-reveal]', { interval: 60 });
-        
-        // Revela elementos da esquerda
-        sr.reveal('[data-scroll-reveal-origin="left"]', { 
-            origin: 'left',
-            distance: '50px'
-        });
+        const scrollObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
 
-        // Revela elementos da direita
-        sr.reveal('[data-scroll-reveal-origin="right"]', { 
-            origin: 'right',
-            distance: '50px'
+        // Adicione a classe 'animate-on-scroll' aos elementos que deseja animar no HTML/CSS
+        document.querySelectorAll('.animate-on-scroll').forEach(element => {
+            scrollObserver.observe(element);
         });
-
     } else {
-        console.warn("ScrollReveal não foi carregado. As animações de scroll estão desativadas.");
+        // Fallback para navegadores antigos: mostra todos os elementos
+        document.querySelectorAll('.animate-on-scroll').forEach(element => {
+            element.classList.add('animate-visible');
+        });
     }
 });
+// Nota: Os estilos CSS para .animate-on-scroll e .animate-visible devem ser adicionados ao style.css
