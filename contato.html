@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar Avaliação | Laser Excellence</title>
+    <meta name="description" content="Preencha o formulário para solicitar sua avaliação com a Enfermeira Marcela Molinaro para Laserterapia ou Feridas Crônicas em São Paulo.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/png" href="assets/icons/favicon-32x32.png">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SEU_GA4_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-SEU_GA4_ID'); 
+    </script>
+</head>
+<body>
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', 'SEU_META_PIXEL_ID'); 
+      fbq('track', 'PageView');
+    </script>
+    
+    <a href="https://api.whatsapp.com/send?phone=5511987654321&text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20com%20a%20Marcela%20F.%20Molinaro." 
+        class="cta-fixo-agendar" target="_blank" id="cta-fixo-agendar">
+        Agendar Via WhatsApp <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <header>
+        <div class="logo"><h1>Laser Excellence <br><span>Marcela F. Molinaro - Biofotônica</span></h1></div>
+        <nav>
+            <ul class="menu-desktop">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tratamentos.html">Protocolos</a></li>
+                <li><a href="quem-somos.html">Quem Somos</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contato.html">Agendamento</a></li>
+            </ul>
+            <button class="menu-mobile-btn"><i class="fas fa-bars"></i></button>
+        </nav>
+    </header>
+
+    <main class="secao-contato-completa">
+        <section class="hero" style="height: 30vh; min-height: 250px;">
+            <div id="hero-3d-background" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: var(--azul-profundo);"></div>
+            <div class="hero-content">
+                <h2>Agende Sua Consulta de Enfermagem</h2>
+                <p>O primeiro passo para o seu protocolo de recuperação acelerada.</p>
+            </div>
+        </section>
+
+        <section class="formulario-agendamento-secao">
+            <div class="formulario-container" data-scroll-reveal data-scroll-reveal-origin="left">
+                <h3 class="titulo-secao">Formulário de Pré-Agendamento</h3>
+                <p>Preencha os dados. Nossa equipe entrará em contato em até 1h útil para confirmar o horário e a avaliação.</p>
+                
+                <form 
+                    id="form-agendamento-online" 
+                    action="https://formspree.io/f/SEU_FORMSPREE_ID" 
+                    method="POST"
+                    onsubmit="handleFormSubmission(event, 'Agendamento_Online')"> 
+                    
+                    <input type="text" name="nome" placeholder="Nome Completo" required>
+                    <input type="tel" name="telefone" placeholder="WhatsApp (DDD + Número)" required>
+                    <input type="email" name="email" placeholder="E-mail" required>
+                    
+                    <select name="foco_principal" required>
+                        <option value="" disabled selected>Foco Principal do Agendamento?</option>
+                        <option value="Avaliacao_Feridas">Avaliação de Feridas Crônicas / Lesões Complexas</option>
+                        <option value="Terapia_ILIB">Terapia ILIB (Bem-Estar Sistêmico / Anti-Aging)</option>
+                        <option value="Onicomicose">Onicomicose (Micose de Unha)</option>
+                        <option value="Outros">Outros</option>
+                    </select>
+
+                    <textarea name="detalhe_problema_clinico" placeholder="Descreva brevemente seu problema clínico ou ferida" required></textarea>
+                    
+                    <p class="aviso-form">Seus dados são tratados com o sigilo exigido pelo COFEN (Registro: 456789).</p>
+                    <button type="submit" class="cta-principal-btn">Solicitar Avaliação e Contato</button>
+                    
+                    <input type="hidden" name="_next" value="https://www.seu-dominio.com.br/agradecimento.html" />
+                    <input type="hidden" name="_captcha" value="false" />
+                </form>
+            </div>
+            
+            <div class="informacoes-contato" data-scroll-reveal data-scroll-reveal-origin="right">
+                <h3 class="titulo-secao">Local e Horário</h3>
+                <p><i class="fas fa-map-marker-alt" style="color: var(--verde-menta);"></i> **Endereço:** São Paulo, SP (Atendimento em consultório e Home Care).</p>
+                <p><i class="fas fa-clock" style="color: var(--verde-menta);"></i> **Horário:** Segunda a Sexta, das 8h às 18h.</p>
+                <p><i class="fab fa-whatsapp" style="color: var(--verde-menta);"></i> **Agendamentos:** (11) 98765-4321</p>
+                
+                <div class="mapa-placeholder" style="margin-top: 20px;">
+                    <iframe src="https://maps.google.com/maps?q=Endereço+Completo+Da+Clínica&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-info">
+                <h3>Laser Excellence | Marcela F. Molinaro</h3>
+                <p>Enfermagem Especializada Coren/SP 456789</p>
+                <p><i class="fas fa-map-marker-alt"></i> São Paulo, SP (Atendimento Presencial e Home Care)</p>
+                <p><i class="fab fa-whatsapp"></i> Contato para Agendamento: (11) 98765-4321</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tratamentos.html">Protocolos</a></li>
+                    <li><a href="quem-somos.html">Quem Somos</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contato.html">Agendamento</a></li>
+                </ul>
+            </div>
+            <div class="footer-legal">
+                <h4>Jurídico</h4>
+                <ul>
+                    <li><a href="politica-privacidade.html">Política de Privacidade (LGPD)</a></li>
+                    <li><a href="termos-uso.html">Termos de Uso</a></li>
+                    <li><a onclick="document.getElementById('cookie-banner').style.display = 'block';">Revisar Cookies</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-copy">
+            &copy; 2025 Laser Excellence | Marcela F. Molinaro. Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="js/futuristic-3d.js"></script>
+    <script src="js/scroll-animations.js"></script>
+    <script src="js/tracking.js"></script>
+
+    <script>
+        // Função de Submissão do Formulário (Dispara rastreamento antes da submissão Formspree)
+        function handleFormSubmission(event, actionName) {
+            // 1. DISPARA O EVENTO DE CONVERSÃO para GA4/Meta Pixel
+            if (typeof gtag === 'function') { 
+                gtag('event', 'lead_form', { 'event_label': actionName });
+            }
+            if (typeof fbq === 'function') { 
+                fbq('track', 'Lead', { content_name: actionName });
+            }
+            
+            // O Formspree/Netlify cuida da submissão POST e do redirecionamento
+            console.log(`[CONVERSÃO] Tracking disparado. Formulário será submetido.`);
+            return true;
+        }
+        
+        // Lógica simples de Menu Mobile (copiada do index)
+        document.querySelector('.menu-mobile-btn').addEventListener('click', function() {
+            document.querySelector('.menu-desktop').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
