@@ -1,14 +1,21 @@
+# Arquivos e pastas a serem ignorados pelo Git
+
+# Logs de ambiente e erros
+/log/
+*.log
+npm-debug.log*
+
+# Pacotes e dependências (se estiver usando Node.js ou ferramentas de build)
+/node_modules
+/dist
+/build
+
 # Arquivos de Sistema Operacional
 .DS_Store
 Thumbs.db
 
-# Pastas de Dependências
-/node_modules
-/dist
-/build
-/temp
-
-# Arquivos de Log e Cache
-*.log
-*.tmp
-*.bak
+# Arquivos de Ferramentas de Desenvolvimento
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
