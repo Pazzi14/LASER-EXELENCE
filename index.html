@@ -3,30 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Excelência Laser Premium | Agende sua Avaliação Gratuita</title>
+    <title>LASER-EXCELLENCE | Tratamentos a Laser de Alta Precisão</title>
     <meta name="description" content="Transforme sua pele com nossos tratamentos a laser de alta precisão. Agende uma avaliação gratuita e alcance a verdadeira excelência.">
     <link rel="stylesheet" href="style.css">
-    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
     
-    <meta property="og:title" content="Excelência Laser Premium | Agende sua Avaliação Gratuita">
-    <meta property="og:description" content="Transforme sua pele com nossos tratamentos a laser de alta precisão. Agende uma avaliação gratuita e alcance a verdadeira excelência.">
-    <meta property="og:image" content="https://www.laser-excellence.com/assets/images/social-preview.jpg"> 
+    <link rel="icon" type="image/jpeg" href="FAVICON/unnamed.jpg">
+    
+    <meta property="og:title" content="LASER-EXCELLENCE | Agende sua Avaliação Gratuita">
     <meta property="og:url" content="https://www.laser-excellence.com/">
+    <meta property="og:image" content="https://www.laser-excellence.com/assets/images/social-preview.jpg"> 
     <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
+    
+    <script defer src="tracking.js"></script>
+    <script defer src="scroll-animations.js"></script>
 </head>
 <body>
 
     <header>
-        <div class="logo">LASER-EXCELLENCE</div>
+        <a href="index.html" class="logo-link">
+            <img src="LOGOTIPO/unnamed.jpg" alt="Logotipo LASER-EXCELLENCE - Clínica de Tratamentos a Laser" class="header-logo">
+        </a>
         <nav>
             <button class="menu-toggle" aria-expanded="false" aria-controls="main-menu">Menu</button>
             <ul id="main-menu" role="menu">
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#sobre">Sobre Nós</a></li>
-                <li><a href="#contato">Contato</a></li>
-                <li><a href="#" class="cta-button-header">Agende Sua Avaliação Gratuita</a></li>
+                <li><a href="tratamentos.html">Tratamentos</a></li>
+                <li><a href="quem-somos.html">Quem Somos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="antes-e-depois.html">Resultados</a></li>
+                <li><a href="contato.html" class="cta-button-header">Agende Sua Avaliação</a></li>
             </ul>
         </nav>
     </header>
@@ -35,12 +42,11 @@
         <section id="hero" class="hero-section">
             <h1>Tratamentos a Laser de Alta Precisão. Sua Excelência na Pele.</h1>
             <p>Alcance resultados inigualáveis com a tecnologia de ponta da LASER-EXCELLENCE.</p>
-            
-            <a href="#agendamento" class="cta-button" role="button">Agende Sua Avaliação Gratuita</a>
+            <a href="contato.html" class="cta-button" role="button">Agende Sua Avaliação Gratuita</a>
         </section>
 
         <section id="servicos">
-            <h2>Nossos Serviços</h2>
+            <h2>Tecnologias e Serviços Inovadores</h2>
             <div class="servico-item">
                 <picture>
                     <source srcset="servico-remocao.webp" type="image/webp">
@@ -51,35 +57,29 @@
                 <h3>Remoção de Tatuagens</h3>
                 <p>Tecnologia avançada para remoção segura e eficaz.</p>
             </div>
-            <div class="servico-item">
-                <picture>
-                    <source srcset="servico-rejuvenescimento.webp" type="image/webp">
-                    <img src="servico-rejuvenescimento.jpg" 
-                         alt="Tratamento de rejuvenescimento facial a laser" 
-                         loading="lazy">
-                </picture>
-                <h3>Rejuvenescimento Facial</h3>
-                <p>Reduza linhas finas e melhore a textura da pele.</p>
-            </div>
-        </section>
-
-        <section id="sobre">
-            <h2>Sobre a Laser-Excellence</h2>
-            <p>Somos uma clínica dedicada à excelência, utilizando os mais rigorosos padrões de qualidade e segurança em todos os procedimentos.</p>
         </section>
     </main>
 
     <footer>
         <div class="footer-links">
-            <a href="#">Carreiras</a>
-            <a href="#">Parceiros</a>
-            <a href="#">Termos de Uso</a>
-            <a href="#">Política de Privacidade</a>
+            <a href="termos-uso.html">Termos de Uso</a>
+            <a href="politica-privacidade.html">Política de Privacidade</a>
+            <a href="contato.html">Localização</a>
         </div>
         <p>Todos os direitos reservados a Tiago de Souza Lima Pazinatto.</p>
         <p>&copy; 2025 LASER-EXCELLENCE.</p>
     </footer>
 
+    <div id="cookie-consent-banner" class="cookie-banner hidden">
+        <p>Utilizamos cookies para melhorar sua experiência e analisar o tráfego. Ao continuar, você concorda com nossa <a href="politica-privacidade.html">Política de Privacidade</a>.</p>
+        <div class="cookie-actions">
+            <button id="accept-cookies" class="cta-button">Aceitar Todos</button>
+            <button id="reject-cookies" class="secondary-button">Rejeitar</button>
+        </div>
+    </div>
+    
+    <script src="faq-accordion.js"></script>
     <script src="script.js"></script>
+    <script src="futuristic-3d.js"></script>
 </body>
 </html>
