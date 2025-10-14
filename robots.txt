@@ -1,7 +1,12 @@
+# Arquivo robots.txt para controle de rastreamento de SEO
+
+# Permite que todos os robôs (User-agent: *) rastreiem o site
 User-agent: *
-Allow: /
 
-# Exclui a página de agradecimento do índice do Google
-Disallow: /agradecimento.html
+# Não permite rastreamento em páginas sensíveis ou não essenciais
+Disallow: /agradecimento.html 
+Disallow: /futuristic-3d.js 
+Disallow: /tracking.js 
 
-Sitemap: https://www.seu-dominio.com.br/sitemap.xml
+# Especifica a localização do arquivo Sitemap.xml
+Sitemap: https://www.laser-excellence.com/sitemap.xml
