@@ -1,73 +1,17 @@
-// Salve este arquivo como js/futuristic-3d.js
+// Este arquivo é um placeholder para funcionalidades complexas/decorativas.
 
 document.addEventListener('DOMContentLoaded', () => {
-    const container = document.getElementById('hero-3d-background');
-    if (!container) return;
+    const mainElement = document.querySelector('main');
+    
+    if (!mainElement) return;
 
-    // 1. Inicialização do Three.js
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-
-    renderer.setSize(container.clientWidth, container.clientHeight);
-    container.appendChild(renderer.domElement);
-
-    // Cor de fundo do azul-profundo, mas a opacidade alpha=true permite o background-color do CSS
-    renderer.setClearColor(0x004c6d, 0.5); 
-
-    // 2. Criação da Geometria (Pontos/Grid)
-    const particleCount = 2000;
-    const particles = new THREE.BufferGeometry();
-    const positions = [];
-    const colors = [];
-    const color = new THREE.Color();
-
-    for (let i = 0; i < particleCount; i++) {
-        // Posição aleatória em um cubo maior
-        positions.push((Math.random() - 0.5) * 100, (Math.random() - 0.5) * 100, (Math.random() - 0.5) * 100);
+    // Exemplo de código: Movimento sutil de um elemento de fundo decorativo
+    function handleMouseMovement(e) {
+        const x = (e.clientX / window.innerWidth - 0.5) * 2; // -1 a 1
+        const y = (e.clientY / window.innerHeight - 0.5) * 2; // -1 a 1
         
-        // Cores (gradiente sutil entre azul e verde menta)
-        color.setHSL(Math.random() * 0.1 + 0.55, 0.8, 0.5); 
-        colors.push(color.r, color.g, color.b);
+        // Implementar a lógica de transformação 3D aqui, se necessário.
     }
-
-    particles.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
-    particles.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
-
-    // Material
-    const particleMaterial = new THREE.PointsMaterial({
-        size: 0.3,
-        vertexColors: true,
-        blending: THREE.AdditiveBlending,
-        transparent: true,
-        opacity: 0.8
-    });
-
-    const particleSystem = new THREE.Points(particles, particleMaterial);
-    scene.add(particleSystem);
-
-    camera.position.z = 5;
-
-    // 3. Função de Animação (Loop)
-    const animate = () => {
-        requestAnimationFrame(animate);
-
-        // Movimento da câmera/sistema de partículas
-        const time = Date.now() * 0.0001;
-        particleSystem.rotation.x = time * 0.25;
-        particleSystem.rotation.y = time * 0.5;
-
-        renderer.render(scene, camera);
-    };
-
-    animate();
-
-    // 4. Responsividade
-    const onResize = () => {
-        camera.aspect = container.clientWidth / container.clientHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(container.clientWidth, container.clientHeight);
-    };
-
-    window.addEventListener('resize', onResize);
+    
+    console.log("Script 'futuristic-3d.js' carregado. Funcionalidade pronta para ser implementada.");
 });
