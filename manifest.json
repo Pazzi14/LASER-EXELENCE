@@ -1,19 +1,19 @@
 {
-  "name": "Laser Excellence | Marcela F.",
-  "short_name": "Laser Excellence",
-  "description": "Enfermagem Especializada em Biofotônica e Tratamento de Feridas.",
+  "name": "LASER-EXCELLENCE",
+  "short_name": "Laser-Ex",
+  "description": "Tratamentos a Laser de Alta Precisão e Excelência.",
   "start_url": "/index.html",
   "display": "standalone",
-  "background_color": "#004c6d",
-  "theme_color": "#66b8a7",
+  "background_color": "#ffffff",
+  "theme_color": "#0056B3",
   "icons": [
     {
-      "src": "assets/icons/icon-192x192.png",
+      "src": "/assets/icons/android-chrome-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "assets/icons/icon-512x512.png",
+      "src": "/assets/icons/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
