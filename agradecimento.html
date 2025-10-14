@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obrigado! Sua Avaliação Foi Solicitada | Laser Excellence</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/png" href="assets/icons/favicon-32x32.png">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SEU_GA4_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-SEU_GA4_ID'); 
+      
+      // *** EVENTO DE CONVERSÃO CRUCIAL PARA GA4/ADS ***
+      gtag('event', 'conversion', {
+          'send_to': 'G-SEU_GA4_ID/SEU_LABEL_CONVERSAO', // Substituir pelo Label de Conversão do Google Ads
+          'value': 20.0, // Valor atribuído ao Lead
+          'currency': 'BRL'
+      });
+    </script>
+</head>
+<body>
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', 'SEU_META_PIXEL_ID'); 
+      fbq('track', 'PageView');
+      
+      // *** EVENTO DE CONVERSÃO CRUCIAL PARA META ADS ***
+      fbq('track', 'CompleteRegistration', { content_name: 'Lead_Formulario' });
+    </script>
+    
+    <main>
+        <section class="hero" style="height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center;">
+            <div id="hero-3d-background" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: var(--azul-profundo);"></div>
+            <div class="hero-content" style="max-width: 700px; padding: 40px;">
+                <h1 style="color: var(--verde-menta);">Sua Solicitação foi Recebida!</h1>
+                <h2 style="font-size: 2.2em; margin-bottom: 20px;">O Próximo Passo é Confirmar Seu Horário.</h2>
+                
+                <div style="background: rgba(255, 255, 255, 0.1); padding: 25px; border-radius: 10px; margin-bottom: 30px;">
+                    <p style="font-size: 1.1em; font-weight: bold;">
+                        ✅ Nossa equipe entrará em contato via **WhatsApp (11) 98765-4321** em no máximo **1 hora útil** para confirmar os detalhes da sua avaliação.
+                    </p>
+                    <p style="margin-top: 15px;">Aguarde o nosso contato ou nos chame agora:</p>
+                </div>
+                
+                <a href="https://api.whatsapp.com/send?phone=5511987654321&text=Ol%C3%A1%2C%20acabei%20de%20solicitar%20uma%20avalia%C3%A7%C3%A3o%20pelo%20site%20e%20gostaria%20de%20confirmar." 
+                    class="cta-principal-btn" target="_blank" style="background-color: #25D366; color: white;">
+                    <i class="fab fa-whatsapp"></i> Chamar no WhatsApp para Confirmar
+                </a>
+                
+                <a href="index.html" class="cta-principal-btn" style="background: none; border: 2px solid var(--verde-menta); color: var(--verde-menta); margin-left: 15px;">
+                    Voltar para a Home
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/futuristic-3d.js"></script>
+</body>
+</html>
