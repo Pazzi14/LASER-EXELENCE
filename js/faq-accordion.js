@@ -1,42 +1,46 @@
-// Salve este arquivo como js/faq-accordion.js
-
 document.addEventListener('DOMContentLoaded', () => {
-    const faqPerguntas = document.querySelectorAll('.faq-pergunta');
+    const faqList = document.getElementById('faq-list');
 
-    faqPerguntas.forEach(pergunta => {
-        pergunta.addEventListener('click', () => {
-            const targetId = pergunta.getAttribute('data-target');
-            const resposta = document.getElementById(targetId);
-            const isExpanded = pergunta.getAttribute('aria-expanded') === 'true';
+    if (faqList) {
+        faqList.querySelectorAll('.faq-item').forEach(item => {
+            const question = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
 
-            // 1. Fechar todos, exceto o atual se estiver sendo aberto
-            faqPerguntas.forEach(p => {
-                const pTargetId = p.getAttribute('data-target');
-                const pResposta = document.getElementById(pTargetId);
+            if (question && answer) {
+                // Adiciona atributos ARIA para acessibilidade
+                question.setAttribute('role', 'button');
+                question.setAttribute('aria-expanded', 'false');
+                question.setAttribute('tabindex', '0'); // Torna o h3 focalizável
+                answer.setAttribute('aria-hidden', 'true');
+
+                question.addEventListener('click', () => {
+                    const isExpanded = question.getAttribute('aria-expanded') === 'true';
+                    
+                    // Fecha todos os outros (opcional, mas comum em acordeões)
+                    faqList.querySelectorAll('.faq-item').forEach(i => {
+                        const q = i.querySelector('.faq-question');
+                        const a = i.querySelector('.faq-answer');
+                        if (q !== question) {
+                            q.setAttribute('aria-expanded', 'false');
+                            a.classList.add('hidden');
+                            a.setAttribute('aria-hidden', 'true');
+                        }
+                    });
+
+                    // Alterna o estado do item clicado
+                    question.setAttribute('aria-expanded', !isExpanded);
+                    answer.classList.toggle('hidden');
+                    answer.setAttribute('aria-hidden', isExpanded ? 'true' : 'false');
+                });
                 
-                if (p !== pergunta && p.getAttribute('aria-expanded') === 'true') {
-                    p.setAttribute('aria-expanded', 'false');
-                    pResposta.style.maxHeight = '0';
-                    pResposta.style.paddingTop = '0';
-                    pResposta.style.paddingBottom = '0';
-                }
-            });
-
-            // 2. Abrir ou fechar o item clicado
-            if (!isExpanded) {
-                // Abrir
-                pergunta.setAttribute('aria-expanded', 'true');
-                // Calcula a altura real do conteúdo e define a altura máxima para animar
-                resposta.style.maxHeight = resposta.scrollHeight + 40 + "px"; // +40px para o padding
-                resposta.style.paddingTop = '20px';
-                resposta.style.paddingBottom = '20px';
-            } else {
-                // Fechar
-                pergunta.setAttribute('aria-expanded', 'false');
-                resposta.style.maxHeight = '0';
-                resposta.style.paddingTop = '0';
-                resposta.style.paddingBottom = '0';
+                // Suporte para navegação por teclado (Enter/Espaço)
+                question.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        question.click();
+                    }
+                });
             }
         });
-    });
+    }
 });
