@@ -1,0 +1,14 @@
+# Arquivos de Sistema Operacional
+.DS_Store
+Thumbs.db
+
+# Pastas de Dependências
+/node_modules
+/dist
+/build
+/temp
+
+# Arquivos de Log e Cache
+*.log
+*.tmp
+*.bak
