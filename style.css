@@ -10,6 +10,7 @@
     --focus-outline-color: #FFD700; 
     --color-cookie-banner: #28a745; /* Verde para Aceite */
     --color-cookie-reject: #6c757d; /* Cinza para Rejeição / Modal Warning */
+    --color-whatsapp: #25D366; /* Cor oficial do WhatsApp */
 }
 
 /* Tipografia e Espaçamento para Rodapé Fixo */
@@ -29,7 +30,7 @@ a:focus, button:focus, input:focus, .cta-button:focus {
     outline-offset: 2px;
 }
 
-/* --- HEADER/NAVIGATION STYLES (Atualizado para Logotipo em Imagem) --- */
+/* --- HEADER/NAVIGATION STYLES --- */
 header {
     display: flex;
     justify-content: space-between;
@@ -167,7 +168,7 @@ footer {
     font-size: 0.9em;
 }
 
-/* --- NOVO: MODAL DE AVISO DE CONTEÚDO SENSÍVEL STYLES --- */
+/* --- MODAL DE AVISO DE CONTEÚDO SENSÍVEL STYLES --- */
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -193,6 +194,10 @@ footer {
     z-index: 10000; 
 }
 
+.modal-overlay.hidden {
+    display: none !important; 
+}
+
 .modal-content {
     background-color: var(--color-background-white);
     padding: 40px;
@@ -201,11 +206,6 @@ footer {
     text-align: center;
     box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
     border-top: 5px solid var(--color-cookie-reject); 
-}
-
-.modal-content h2 {
-    color: var(--color-cookie-reject);
-    margin-top: 0;
 }
 
 .modal-actions {
@@ -231,6 +231,36 @@ footer {
     background-color: #5a6268;
 }
 
+/* --- NOVO: BOTÃO FLUTUANTE WHATSAPP --- */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 110px; /* Acima do cookie banner e do footer */
+    right: 20px;
+    background-color: var(--color-whatsapp);
+    color: var(--color-text-light);
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    background-color: #1FAF4A;
+}
+
+.whatsapp-icon {
+    width: 35px;
+    height: 35px;
+    fill: var(--color-text-light); 
+}
 
 /* --- GALERIA GRID STYLES --- */
 .galeria-grid {
@@ -240,32 +270,38 @@ footer {
     margin-top: 30px;
 }
 
-.foto-par {
+/* --- FAQ STYLES (Para funcionamento do Acordeão) --- */
+.faq-question {
+    cursor: pointer;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+    border-radius: 4px;
     display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
 }
 
-.foto-par img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-    transition: transform 0.5s ease;
+.faq-question:hover {
+    background-color: #eee;
 }
 
-/* ==================================== */
-/* 🛠️ CORREÇÕES E ADIÇÕES CRÍTICAS (DEBUG) */
-/* ==================================== */
+.faq-answer {
+    padding: 15px;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-radius: 0 0 4px 4px;
+}
 
-/* CORREÇÃO 1: Estilo para fechar a resposta do FAQ (usado por faq-accordion.js) */
 .faq-answer.hidden {
     display: none !important; 
 }
 
-/* CORREÇÃO 2: Estilos para as Animações de Rolagem (usado por scroll-animations.js) */
+/* --- ANIMAÇÃO DE ROLAGEM (Para funcionamento do scroll-animations.js) --- */
 .animate-on-scroll {
     opacity: 0;
     transform: translateY(20px);
@@ -276,5 +312,3 @@ footer {
     opacity: 1;
     transform: translateY(0);
 }
-
-/* FIM DAS CORREÇÕES CSS */
