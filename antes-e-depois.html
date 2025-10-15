@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria Antes e Depois | Aviso de Conteúdo | LASER-EXCELLENCE</title>
+    <meta name="description" content="Acesse a galeria de fotos de antes e depois dos tratamentos LASER-EXCELLENCE, mediante aceitação do aviso de conteúdo sensível.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    
+    <link rel="icon" type="image/jpeg" href="FAVICON/unnamed.jpg">
+    
+    <script defer src="tracking.js"></script>
+    <script defer src="scroll-animations.js"></script>
+</head>
+<body>
+    
+    <header>
+        <a href="index.html" class="logo-link">
+            <img src="LOGOTIPO/unnamed.jpg" alt="Logotipo LASER-EXCELLENCE - Clínica de Tratamentos a Laser" class="header-logo">
+        </a>
+        <nav>
+            <button class="menu-toggle" aria-expanded="false" aria-controls="main-menu">Menu</button>
+            <ul id="main-menu" role="menu">
+                <li><a href="index.html">Página Principal</a></li>
+                <li><a href="tratamentos.html">Tratamentos</a></li>
+                <li><a href="quem-somos.html">Quem Somos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="antes-e-depois.html">Resultados</a></li>
+                <li><a href="contato.html" class="cta-button-header">Agende Sua Avaliação</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="galeria-sensivel">
+            <h1 class="visually-hidden">Galeria de Resultados Antes e Depois</h1> 
+            <p style="text-align: center;">Resultados visíveis e comprovados dos nossos tratamentos a laser de alta excelência.</p>
+
+            <div class="galeria-grid">
+                <div class="foto-par animate-on-scroll">
+                    <img src="Assets%20feridas%20antes%20e%20depois/WhatsApp%20Image%202025-10-11%20at%2011.46.33_e08d5b79.jpg" alt="Foto Antes do Tratamento 1" loading="lazy">
+                    <img src="Assets%20feridas%20antes%20e%20depois/WhatsApp%20Image%202025-10-11%20at%2011.46.33_9bc0e49f.jpg" alt="Foto Depois do Tratamento 1" loading="lazy">
+                </div>
+                
+                <div class="foto-par animate-on-scroll">
+                    <img src="Assets%20feridas%20antes%20e%20depois/WhatsApp%20Image%202025-10-11%20at%2011.46.33_872a4558.jpg" alt="Foto Antes do Tratamento 2" loading="lazy">
+                    <img src="Assets%20feridas%20antes%20e%20depois/WhatsApp%20Image%202025-10-11%20at%2011.46.33_71be9ab9.jpg" alt="Foto Depois do Tratamento 2" loading="lazy">
+                </div>
+
+                <div class="foto-par animate-on-scroll">
+                    <img src="Assets%20feridas%20antes%20e%20depois/WhatsApp%20Image%202025-10-11%20at%2011.46.33_289c8029.jpg" alt="Foto Antes do Tratamento 3" loading="lazy">
+                    <img src="Assets%20feridas%20antes%20e%20depois/WhatsApp%20Image%202025-10-11%20at%2011.46.32_a2ff379a.jpg" alt="Foto Depois do Tratamento 3" loading="lazy">
+                </div>
+                
+            </div>
+            
+            <p style="text-align: center; margin-top: 40px; font-style: italic;">As imagens são meramente ilustrativas e os resultados podem variar de paciente para paciente.</p>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-links">
+            <a href="termos-uso.html">Termos de Uso</a>
+            <a href="politica-privacidade.html">Política de Privacidade</a>
+            <a href="contato.html">Localização</a>
+        </div>
+        <p>Todos os direitos reservados a Tiago de Souza Lima Pazinatto.</p>
+        <p>&copy; 2025 LASER-EXCELLENCE.</p>
+    </footer>
+
+    <div id="cookie-consent-banner" class="cookie-banner hidden">
+        <p>Utilizamos cookies para melhorar sua experiência e analisar o tráfego. Ao continuar, você concorda com nossa <a href="politica-privacidade.html">Política de Privacidade</a>.</p>
+        <div class="cookie-actions">
+            <button id="accept-cookies" class="cta-button">Aceitar Todos</button>
+            <button id="reject-cookies" class="secondary-button">Rejeitar</button>
+        </div>
+    </div>
+    
+    <div id="content-warning-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h2>Aviso de Conteúdo Sensível</h2>
+            <p>Esta página contém imagens de **antes e depois de feridas e lesões** tratadas a laser. O conteúdo é gráfico e pode ser perturbador para algumas pessoas.</p>
+            <p>Ao clicar em "Continuar", você confirma que tem mais de 18 anos e deseja visualizar o conteúdo.</p>
+            <div class="modal-actions">
+                <button id="modal-continue" class="cta-button" role="button">Continuar para a Galeria (Okay)</button>
+                <a href="index.html" class="secondary-button" role="button">Voltar para a Página Principal</a>
+            </div>
+        </div>
+    </div>
+    
+    <script src="faq-accordion.js"></script>
+    <script src="script.js"></script>
+    <script src="futuristic-3d.js"></script>
+    <script src="sensitive-content.js"></script>
+</body>
+</html>
