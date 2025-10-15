@@ -255,3 +255,26 @@ footer {
     object-fit: cover;
     transition: transform 0.5s ease;
 }
+
+/* ==================================== */
+/* 🛠️ CORREÇÕES E ADIÇÕES CRÍTICAS (DEBUG) */
+/* ==================================== */
+
+/* CORREÇÃO 1: Estilo para fechar a resposta do FAQ (usado por faq-accordion.js) */
+.faq-answer.hidden {
+    display: none !important; 
+}
+
+/* CORREÇÃO 2: Estilos para as Animações de Rolagem (usado por scroll-animations.js) */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.animate-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* FIM DAS CORREÇÕES CSS */
