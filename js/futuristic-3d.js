@@ -1,13 +1,12 @@
 // futuristic-3d.js - Efeito 3D Futurista com Three.js (r128)
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Verifica se a biblioteca Three.js está carregada
+    // Verifica se a biblioteca Three.js está disponível
     if (typeof THREE === 'undefined') {
-        console.error("ERRO CRÍTICO: Three.js não foi carregado. Adicione a tag <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js'></script> no seu HTML antes de futuristic-3d.js.");
+        console.warn("Three.js não foi carregado. O efeito 3D não será exibido.");
         return;
     }
 
-    // --- Configuração da Cena ---
     let scene, camera, renderer;
     let particles, particleCount = 2000;
     let mouseX = 0, mouseY = 0;
@@ -15,33 +14,29 @@ document.addEventListener('DOMContentLoaded', () => {
     let windowHalfY = window.innerHeight / 2;
 
     function init() {
-        // 1. Criar a Cena
         scene = new THREE.Scene();
-        
-        // Fundo preto para o efeito futurista
         scene.background = new THREE.Color(0x000000); 
 
-        // 2. Criar a Câmera
         camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
         camera.position.z = 1000;
 
-        // 3. Criar o Renderer
-        renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false }); 
         renderer.setPixelRatio(window.devicePixelRatio);
         renderer.setSize(window.innerWidth, window.innerHeight);
 
-        // Adicionar o canvas 3D ao corpo da página (como primeiro elemento)
+        // Z-INDEX CRÍTICO para o fundo
         renderer.domElement.style.position = 'fixed';
         renderer.domElement.style.top = '0';
         renderer.domElement.style.left = '0';
-        renderer.domElement.style.zIndex = '-1'; // Fica atrás de todo o conteúdo HTML/CSS
+        renderer.domElement.style.zIndex = '-1'; 
         document.body.appendChild(renderer.domElement);
 
-        // 4. Criar as Partículas
+        // Configuração das Partículas
         const geometry = new THREE.BufferGeometry();
         const positions = [];
         const colors = [];
         const color = new THREE.Color();
+
         const material = new THREE.PointsMaterial({ 
             size: 5, 
             vertexColors: true, 
@@ -51,13 +46,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         for (let i = 0; i < particleCount; i++) {
-            // Posição aleatória no espaço (-2000 a 2000)
             const x = Math.random() * 4000 - 2000;
             const y = Math.random() * 4000 - 2000;
             const z = Math.random() * 4000 - 2000;
             positions.push(x, y, z);
-
-            // Cor aleatória, puxando para o azul/ciano futurista
+            // Cor azul/ciano futurista
             color.setHSL(0.5 + Math.random() * 0.2, 1, 0.5); 
             colors.push(color.r, color.g, color.b);
         }
@@ -68,13 +61,9 @@ document.addEventListener('DOMContentLoaded', () => {
         particles = new THREE.Points(geometry, material);
         scene.add(particles);
 
-
-        // --- Listeners de Eventos ---
         document.addEventListener('mousemove', onDocumentMouseMove, false);
         window.addEventListener('resize', onWindowResize, false);
     }
-
-    // --- Funções de Evento ---
 
     function onWindowResize() {
         windowHalfX = window.innerWidth / 2;
@@ -86,28 +75,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function onDocumentMouseMove(event) {
-        mouseX = (event.clientX - windowHalfX) * 2;
-        mouseY = (event.clientY - windowHalfY) * 2;
+        mouseX = (event.clientX - windowHalfX) * 0.5; 
+        mouseY = (event.clientY - windowHalfY) * 0.5;
     }
-
-    // --- Loop de Animação ---
 
     function animate() {
         requestAnimationFrame(animate);
 
-        // Rotação da câmera para o efeito de paralaxe com o mouse
         camera.position.x += (mouseX * 0.05 - camera.position.x) * 0.05;
         camera.position.y += (-mouseY * 0.05 - camera.position.y) * 0.05;
         camera.lookAt(scene.position);
 
-        // Movimento das Partículas (Simulação de um campo de estrelas/hiperespaço)
         particles.rotation.z += 0.001;
         particles.rotation.x += 0.0005;
         
         renderer.render(scene, camera);
     }
 
-    // Inicializa tudo
     init();
     animate();
 });
