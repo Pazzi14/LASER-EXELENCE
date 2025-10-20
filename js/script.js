@@ -1,51 +1,51 @@
-// VARIÁVEL GLOBAL PARA CONSENTIMENTO
-window.cookieConsentStatus = localStorage.getItem('cookieConsent');
+// script.js - Lógica Principal (Menu e Cookies)
 
-// 1. Lógica do Cookie Consent (LGPD)
-function showCookieBanner() {
-    const banner = document.getElementById('cookie-consent-banner');
-    if (window.cookieConsentStatus === null) {
-        banner.classList.remove('hidden');
-    }
-}
-
-function setCookieConsent(status) {
-    // 'accepted', 'rejected'
-    localStorage.setItem('cookieConsent', status);
-    window.cookieConsentStatus = status;
-    document.getElementById('cookie-consent-banner').classList.add('hidden');
-    
-    // Dispara evento para scripts que dependem de consentimento (ex: tracking.js)
-    document.dispatchEvent(new Event('cookieConsentUpdated'));
-}
-
-// 2. Lógica do Menu Responsivo
-function initializeMenu() {
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Lógica do Menu Hamburger (Mobile)
     const menuToggle = document.querySelector('.menu-toggle');
     const mainMenu = document.getElementById('main-menu');
+
     if (menuToggle && mainMenu) {
         menuToggle.addEventListener('click', () => {
             const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
             menuToggle.setAttribute('aria-expanded', !isExpanded);
-            mainMenu.classList.toggle('is-open');
+            mainMenu.classList.toggle('visible');
         });
     }
-}
 
-// 3. Inicialização Principal
-document.addEventListener('DOMContentLoaded', () => {
-    // Inicializa o Menu
-    initializeMenu();
-    
-    // Mostra o banner de cookies se não houver consentimento
-    showCookieBanner();
+    // 2. Lógica do Cookie Consent Banner
+    const cookieBanner = document.getElementById('cookie-consent-banner');
+    const acceptButton = document.getElementById('accept-cookies');
+    const rejectButton = document.getElementById('reject-cookies');
 
-    // Adiciona Listeners aos botões do banner
-    document.getElementById('accept-cookies')?.addEventListener('click', () => {
-        setCookieConsent('accepted');
-    });
+    function checkCookieConsent() {
+        if (!localStorage.getItem('cookieConsent')) {
+            if (cookieBanner) {
+                // Adiciona a classe 'visible' ou remove 'hidden' para exibir
+                cookieBanner.classList.remove('hidden'); 
+            }
+        }
+    }
 
-    document.getElementById('reject-cookies')?.addEventListener('click', () => {
-        setCookieConsent('rejected');
-    });
+    function setCookieConsent(consent) {
+        localStorage.setItem('cookieConsent', consent ? 'accepted' : 'rejected');
+        if (cookieBanner) {
+            cookieBanner.classList.add('hidden');
+        }
+        // Aciona o carregamento dos scripts de rastreamento se aceito
+        if (consent) {
+            // Se 'tracking.js' foi deferido no HTML, esta linha pode ser um console log ou um evento.
+            console.log("Cookies aceitos. Os scripts de rastreamento em tracking.js serão executados.");
+        }
+    }
+
+    if (acceptButton) {
+        acceptButton.addEventListener('click', () => setCookieConsent(true));
+    }
+
+    if (rejectButton) {
+        rejectButton.addEventListener('click', () => setCookieConsent(false));
+    }
+
+    checkCookieConsent();
 });
