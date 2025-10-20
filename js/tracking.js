@@ -1,10 +1,13 @@
-// O script de rastreamento só deve ser executado se houver consentimento.
+// tracking.js - Placeholder para códigos de rastreamento (Google Analytics, Meta Pixel, etc.)
 
-function initializeTracking() {
-    if (window.cookieConsentStatus === 'accepted') {
-        console.log("Tracking iniciado. Cookies de marketing e performance estão ativos.");
+document.addEventListener('DOMContentLoaded', () => {
+    // Verifique o consentimento de cookies antes de carregar scripts de terceiros
+    const consent = localStorage.getItem('cookieConsent');
+    
+    if (consent === 'accepted') {
+        console.log("Carregando scripts de rastreamento (Ex: Google Analytics, Meta Pixel).");
         
-        // Exemplo: Código de integração do Google Analytics
+        // CÓDIGO DO GOOGLE ANALYTICS AQUI (exemplo):
         /*
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -13,13 +16,8 @@ function initializeTracking() {
         ga('create', 'UA-XXXXX-Y', 'auto');
         ga('send', 'pageview');
         */
+        
     } else {
-        console.log("Tracking bloqueado. Consentimento de cookies não aceito.");
+        console.log("Rastreamento bloqueado por falta de consentimento de cookies.");
     }
-}
-
-// 1. Tenta inicializar ao carregar a página
-initializeTracking();
-
-// 2. Inicializa novamente se o consentimento for dado (evento disparado em script.js)
-document.addEventListener('cookieConsentUpdated', initializeTracking);
+});
