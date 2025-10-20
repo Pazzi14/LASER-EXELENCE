@@ -3,26 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato e Localização | LASER-EXCELLENCE</title>
-    <meta name="description" content="Entre em contato com a LASER-EXCELLENCE para agendar sua avaliação gratuita ou tirar dúvidas sobre nossos tratamentos a laser.">
-    
+    <title>Contato e Agendamento | LASER-EXCELLENCE</title>
+    <meta name="description" content="Preencha o formulário para que nossa especialista Marcela entre em contato ou clique para falar diretamente no WhatsApp.">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="manifest" href="manifest.json">
-    
     <link rel="icon" type="image/jpeg" href="FAVICON/unnamed.jpg">
     
     <script defer src="tracking.js"></script>
     <script defer src="scroll-animations.js"></script>
 </head>
 <body>
+    
     <header>
         <a href="index.html" class="logo-link">
-            <img src="LOGOTIPO/unnamed.jpg" alt="Logotipo LASER-EXCELLENCE - Clínica de Tratamentos a Laser" class="header-logo">
+            <img src="LOGOTIPO/unnamed.jpg" alt="Logotipo LASER-EXCELLENCE" class="header-logo">
         </a>
         <nav>
             <button class="menu-toggle" aria-expanded="false" aria-controls="main-menu">Menu</button>
             <ul id="main-menu" role="menu">
+                <li><a href="index.html">Página Principal</a></li>
                 <li><a href="tratamentos.html">Tratamentos</a></li>
                 <li><a href="quem-somos.html">Quem Somos</a></li>
                 <li><a href="contato.html">Contato</a></li>
@@ -34,29 +34,36 @@
     </header>
 
     <main>
-        <section id="main-content">
-            <h1 class="animate-on-scroll">Agende sua Avaliação Gratuita</h1>
-            <p class="animate-on-scroll">Preencha o formulário abaixo e nossa equipe entrará em contato o mais breve possível.</p>
+        <section id="contato-principal">
+            <h1 class="animate-on-scroll">Entre em Contato</h1>
+            <p style="text-align: center;" class="animate-on-scroll">Escolha a melhor forma de falar com a gente. Estamos prontos para te ajudar!</p>
             
-            <form action="agradecimento.html" method="POST" style="max-width: 600px; margin: 0 auto; text-align: left;" class="animate-on-scroll">
-                <div style="margin-bottom: 15px;">
-                    <label for="nome">Nome Completo:</label>
-                    <input type="text" id="nome" name="nome" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
-                </div>
-                <div style="margin-bottom: 15px;">
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
-                </div>
-                <div style="margin-bottom: 15px;">
-                    <label for="telefone">Telefone (WhatsApp):</label>
-                    <input type="tel" id="telefone" name="telefone" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
-                </div>
-                <div style="margin-bottom: 15px;">
-                    <label for="mensagem">Mensagem/Dúvida:</label>
-                    <textarea id="mensagem" name="mensagem" rows="4" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;"></textarea>
-                </div>
-                <button type="submit" class="cta-button" role="button" style="width: 100%;">Enviar Solicitação</button>
+            <div style="text-align: center; margin-bottom: 40px;" class="animate-on-scroll">
+                <a href="https://api.whatsapp.com/send?phone=5511987654321&text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20minha%20avalia%C3%A7%C3%A3o%20gratuita." class="cta-button" style="background-color: var(--color-whatsapp); padding: 15px 40px; font-size: 1.2em;" target="_blank">
+                    Falar com Especialista AGORA (WhatsApp)
+                </a>
+            </div>
+
+            <h2 style="text-align: center;" class="animate-on-scroll">Ou Preencha para Contato da Marcela</h2>
+            
+            <form action="agradecimento.html" method="POST" class="contact-form animate-on-scroll">
+                <p>Preencha seus dados e nossa especialista Marcela entrará em contato em breve para agendar sua avaliação gratuita.</p>
+                
+                <label for="nome">Nome Completo:</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="telefone">Telefone (WhatsApp preferencial):</label>
+                <input type="tel" id="telefone" name="telefone" placeholder="(DD) 9 XXXX-XXXX" required>
+                
+                <label for="interesse">Principal Interesse (Opcional):</label>
+                <textarea id="interesse" name="interesse" rows="4" placeholder="Ex: Gostaria de remover uma tatuagem no braço..."></textarea>
+                
+                <button type="submit" class="cta-button" style="width: 100%; margin-top: 15px;">Enviar e Aguardar Contato</button>
             </form>
+            
         </section>
     </main>
     
@@ -69,7 +76,7 @@
         <p>Todos os direitos reservados a Tiago de Souza Lima Pazinatto.</p>
         <p>&copy; 2025 LASER-EXCELLENCE.</p>
     </footer>
-    
+
     <div id="cookie-consent-banner" class="cookie-banner hidden">
         <p>Utilizamos cookies para melhorar sua experiência e analisar o tráfego. Ao continuar, você concorda com nossa <a href="politica-privacidade.html">Política de Privacidade</a>.</p>
         <div class="cookie-actions">
@@ -79,13 +86,10 @@
     </div>
     
     <a href="https://api.whatsapp.com/send?phone=5511987654321&text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20minha%20avalia%C3%A7%C3%A3o%20gratuita." class="whatsapp-float" target="_blank" aria-label="Fale conosco pelo WhatsApp">
-        <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2C6.48 2 2 6.48 2 12c0 3.12 1.34 5.94 3.48 7.92L4 22l3.08-1.08c1.8-.6 3.84-.92 6.04-.92 5.52 0 10-4.48 10-10S17.52 2 12 2zm3.5 12.5c-.24.24-.52.36-.84.36-.32 0-.6-.12-.84-.36l-.88-.88c-.12-.12-.24-.36-.24-.6s.12-.48.24-.6l.88-.88c.24-.24.48-.36.72-.36.24 0 .48.12.72.36l.88.88c.12.12.24.36.24.6s-.12.48-.24.6l-.88.88zm-3-3c-.24-.24-.52-.36-.84-.36-.32 0-.6.12-.84.36l-.88.88c-.12.12-.24.36-.24.6s.12.48.24.6l.88.88c.24.24.48.36.72.36.24 0 .48-.12.72-.36l.88-.88c.12-.12.24-.36.24-.6s-.12-.48-.24-.6l-.88-.88z"/>
-        </svg>
+        <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12c0 3.12 1.34 5.94 3.48 7.92L4 22l3.08-1.08c1.8-.6 3.84-.92 6.04-.92 5.52 0 10-4.48 10-10S17.52 2 12 2zm3.5 12.5c-.24.24-.52.36-.84.36-.32 0-.6-.12-.84-.36l-.88-.88c-.12-.12-.24-.36-.24-.6s.12-.48.24-.6l-.88-.88c.24-.24.48-.36.72-.36.24 0 .48.12.72.36l.88.88c.12.12.24.36.24.6s-.12.48-.24.6l-.88.88zm-3-3c-.24-.24-.52-.36-.84-.36-.32 0-.6.12-.84.36l-.88.88c-.12.12-.24.36-.24.6s.12.48.24.6l-.88.88c.24.24.48.36.72.36.24 0 .48-.12.72-.36l-.88-.88c.12-.12.24-.36.24-.6s-.12-.48-.24-.6l-.88-.88z"/></svg>
     </a>
     
-    <script src="faq-accordion.js"></script>
     <script src="script.js"></script>
-    <script src="futuristic-3d.js"></script>
+    <script src="scroll-animations.js"></script>
 </body>
 </html>
