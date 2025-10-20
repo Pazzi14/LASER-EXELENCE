@@ -36,28 +36,24 @@
 
     <main>
         <section id="galeria-sensivel">
-            <h1 class="visually-hidden">Galeria de Resultados Antes e Depois</h1> 
-            <p style="text-align: center;">Resultados visíveis e comprovados dos nossos tratamentos a laser de alta excelência.</p>
+            <h1 style="text-align: center;" class="animate-on-scroll">Resultados Visíveis de Alta Excelência</h1> 
+            <p style="text-align: center;" class="animate-on-scroll">Resultados visíveis e comprovados dos nossos tratamentos a laser de alta excelência. Passe o mouse sobre a imagem para ver o "Depois".</p>
 
-            <div class="galeria-grid">
-                <div class="foto-par animate-on-scroll">
-                    <img src="Assets%20feridas%20antes%20e%20depois/WhatsApp%20Image%202025-10-11%20at%2011.46.33_e08d5b79.jpg" alt="Foto Antes do Tratamento 1" loading="lazy">
-                    <img src="Assets%20feridas%20antes%20e%20depois/WhatsApp%20Image%202025-10-11%20at%2011.46.33_9bc0e49f.jpg" alt="Foto Depois do Tratamento 1" loading="lazy">
-                </div>
+            <div class="galeria-grid" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); max-width: 800px; margin: 30px auto;">
                 
                 <div class="foto-par animate-on-scroll">
-                    <img src="Assets%20feridas%20antes%20e%20depois/WhatsApp%20Image%202025-10-11%20at%2011.46.33_872a4558.jpg" alt="Foto Antes do Tratamento 2" loading="lazy">
-                    <img src="Assets%20feridas%20antes%20e%20depois/WhatsApp%20Image%202025-10-11%20at%2011.46.33_71be9ab9.jpg" alt="Foto Depois do Tratamento 2" loading="lazy">
+                    <img src="1000055896.png" alt="Antes - Tratamento de Tatuagem" loading="lazy">
+                    <img src="1000055895.png" alt="Depois - Tratamento de Tatuagem" loading="lazy">
                 </div>
 
                 <div class="foto-par animate-on-scroll">
-                    <img src="Assets%20feridas%20antes%20e%20depois/WhatsApp%20Image%202025-10-11%20at%2011.46.33_289c8029.jpg" alt="Foto Antes do Tratamento 3" loading="lazy">
-                    <img src="Assets%20feridas%20antes%20e%20depois/WhatsApp%20Image%202025-10-11%20at%2011.46.32_a2ff379a.jpg" alt="Foto Depois do Tratamento 3" loading="lazy">
+                    <img src="1000055897.png" alt="Antes - Tratamento de Lesão" loading="lazy">
+                    <img src="1000055896.png" alt="Depois - Tratamento de Lesão" loading="lazy">
                 </div>
                 
             </div>
             
-            <p style="text-align: center; margin-top: 40px; font-style: italic;">As imagens são meramente ilustrativas e os resultados podem variar de paciente para paciente.</p>
+            <p style="text-align: center; margin-top: 40px; font-style: italic;">As imagens são meramente ilustrativas e os resultados podem variar. Consulte um especialista.</p>
         </section>
     </main>
     
@@ -79,7 +75,7 @@
         </div>
     </div>
     
-    <div id="content-warning-modal" class="modal-overlay">
+    <div id="content-warning-modal" class="modal-overlay hidden">
         <div class="modal-content">
             <h2>Aviso de Conteúdo Sensível</h2>
             <p>Esta página contém imagens de **antes e depois de feridas e lesões** tratadas a laser. O conteúdo é gráfico e pode ser perturbador para algumas pessoas.</p>
@@ -91,9 +87,12 @@
         </div>
     </div>
     
+    <a href="https://api.whatsapp.com/send?phone=5511987654321&text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20minha%20avalia%C3%A7%C3%A3o%20gratuita." class="whatsapp-float" target="_blank" aria-label="Fale conosco pelo WhatsApp">
+        <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12c0 3.12 1.34 5.94 3.48 7.92L4 22l3.08-1.08c1.8-.6 3.84-.92 6.04-.92 5.52 0 10-4.48 10-10S17.52 2 12 2zm3.5 12.5c-.24.24-.52.36-.84.36-.32 0-.6-.12-.84-.36l-.88-.88c-.12-.12-.24-.36-.24-.6s.12-.48.24-.6l-.88-.88c.24-.24.48-.36.72-.36.24 0 .48.12.72.36l.88.88c.12.12.24.36.24.6s-.12.48-.24.6l-.88.88zm-3-3c-.24-.24-.52-.36-.84-.36-.32 0-.6.12-.84.36l-.88.88c-.12.12-.24.36-.24.6s.12.48.24.6l-.88.88c.24.24.48.36.72.36.24 0 .48-.12.72-.36l-.88-.88c.12-.12.24-.36.24-.6s-.12-.48-.24-.6l-.88-.88z"/></svg>
+    </a>
+    
     <script src="faq-accordion.js"></script>
     <script src="script.js"></script>
-    <script src="futuristic-3d.js"></script>
     <script src="sensitive-content.js"></script>
 </body>
 </html>
