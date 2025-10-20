@@ -11,10 +11,7 @@
     
     <link rel="icon" type="image/jpeg" href="FAVICON/unnamed.jpg">
     
-    <meta property="og:title" content="LASER-EXCELLENCE | Agende sua Avaliação Gratuita">
-    <meta property="og:url" content="https://www.laser-excellence.com/">
-    <meta property="og:image" content="https://www.laser-excellence.com/assets/images/social-preview.jpg"> 
-    <meta property="og:type" content="website">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script> 
     
     <script defer src="tracking.js"></script>
     <script defer src="scroll-animations.js"></script>
@@ -23,7 +20,7 @@
 
     <header>
         <a href="index.html" class="logo-link">
-            <img src="LOGOTIPO/unnamed.jpg" alt="Logotipo LASER-EXCELLENCE - Clínica de Tratamentos a Laser" class="header-logo">
+            <img src="LOGOTIPO/unnamed.jpg" alt="Logotipo LASER-EXCELLENCE" class="header-logo">
         </a>
         <nav>
             <button class="menu-toggle" aria-expanded="false" aria-controls="main-menu">Menu</button>
@@ -40,24 +37,25 @@
 
     <main>
         <section id="hero" class="hero-section">
-            <h1>Tratamentos a Laser de Alta Precisão. Sua Excelência na Pele.</h1>
-            <p>Alcance resultados inigualáveis com a tecnologia de ponta da LASER-EXCELLENCE.</p>
-            <a href="contato.html" class="cta-button" role="button">Agende Sua Avaliação Gratuita</a>
+            <h1 class="animate-on-scroll">Tratamentos a Laser de Alta Precisão. Sua Excelência na Pele.</h1>
+            <p class="animate-on-scroll">Alcance resultados inigualáveis com a tecnologia de ponta da LASER-EXCELLENCE.</p>
+            <a href="contato.html" class="cta-button animate-on-scroll" role="button">Agende Sua Avaliação Gratuita</a>
         </section>
 
         <section id="servicos">
-            <h2>Tecnologias e Serviços Inovadores</h2>
+            <h2 class="animate-on-scroll">Tecnologias e Serviços Inovadores</h2>
             <div class="servico-item animate-on-scroll">
-                <picture>
-                    <source srcset="servico-remocao.webp" type="image/webp">
-                    <img src="servico-remocao.jpg" 
-                        alt="Profissional realizando remoção de tatuagem a laser em um cliente" 
-                        loading="lazy">
-                </picture>
-                <h3>Remoção de Tatuagens</h3>
-                <p>Tecnologia avançada para remoção segura e eficaz.</p>
+                <h3>Remoção de Tatuagens e Lesões</h3>
+                <p>Tecnologia avançada para remoção segura, precisa e com foco na recuperação da pele.</p>
             </div>
+            </section>
+        
+        <section style="background-color: #f4f4f4; text-align: center;">
+            <h2 class="animate-on-scroll">Pronto para a Transformação?</h2>
+            <p class="animate-on-scroll">Fale com a especialista Marcela e comece sua jornada para a excelência.</p>
+            <a href="contato.html" class="cta-button animate-on-scroll">Fale com um Especialista Agora</a>
         </section>
+        
     </main>
 
     <footer>
@@ -77,6 +75,10 @@
             <button id="reject-cookies" class="secondary-button">Rejeitar</button>
         </div>
     </div>
+    
+    <a href="https://api.whatsapp.com/send?phone=5511987654321&text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20minha%20avalia%C3%A7%C3%A3o%20gratuita." class="whatsapp-float" target="_blank" aria-label="Fale conosco pelo WhatsApp">
+        <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12c0 3.12 1.34 5.94 3.48 7.92L4 22l3.08-1.08c1.8-.6 3.84-.92 6.04-.92 5.52 0 10-4.48 10-10S17.52 2 12 2zm3.5 12.5c-.24.24-.52.36-.84.36-.32 0-.6-.12-.84-.36l-.88-.88c-.12-.12-.24-.36-.24-.6s.12-.48.24-.6l-.88-.88c.24-.24.48-.36.72-.36.24 0 .48.12.72.36l.88.88c.12.12.24.36.24.6s-.12.48-.24.6l-.88.88zm-3-3c-.24-.24-.52-.36-.84-.36-.32 0-.6.12-.84.36l-.88.88c-.12.12-.24.36-.24.6s.12.48.24.6l-.88.88c.24.24.48.36.72.36.24 0 .48-.12.72-.36l-.88-.88c.12-.12.24-.36.24-.6s-.12-.48-.24-.6l-.88-.88z"/></svg>
+    </a>
     
     <script src="faq-accordion.js"></script>
     <script src="script.js"></script>
