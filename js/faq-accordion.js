@@ -1,30 +1,36 @@
+// faq-accordion.js - Lógica de Acordeão para FAQ
+
 document.addEventListener('DOMContentLoaded', () => {
-    const faqQuestions = document.querySelectorAll('.faq-question');
+    const faqHeaders = document.querySelectorAll('.faq-header');
 
-    faqQuestions.forEach(question => {
-        // Adiciona ARIA role para acessibilidade
-        question.setAttribute('role', 'button');
-        question.setAttribute('aria-expanded', 'false');
-        
-        question.addEventListener('click', () => {
-            const answer = question.nextElementSibling;
-            const isExpanded = question.getAttribute('aria-expanded') === 'true';
+    faqHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            const currentItem = header.parentElement;
+            const content = header.nextElementSibling;
+            
+            const isExpanded = header.getAttribute('aria-expanded') === 'true';
 
-            // Fecha todas as outras respostas abertas
-            faqQuestions.forEach(q => {
-                if (q !== question && q.getAttribute('aria-expanded') === 'true') {
-                    q.setAttribute('aria-expanded', 'false');
-                    q.nextElementSibling.classList.add('hidden');
+            // Fecha todos os outros que estão abertos
+            document.querySelectorAll('.faq-item.active').forEach(item => {
+                if (item !== currentItem) {
+                    item.classList.remove('active');
+                    item.querySelector('.faq-header').setAttribute('aria-expanded', 'false');
+                    item.querySelector('.faq-content').style.maxHeight = null;
+                    item.querySelector('.faq-icon').textContent = '+';
                 }
             });
 
-            // Alterna a resposta clicada
-            if (isExpanded) {
-                answer.classList.add('hidden');
-                question.setAttribute('aria-expanded', 'false');
+            // Alterna o estado do item clicado
+            currentItem.classList.toggle('active');
+            header.setAttribute('aria-expanded', !isExpanded);
+            
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+                header.querySelector('.faq-icon').textContent = '+';
             } else {
-                answer.classList.remove('hidden');
-                question.setAttribute('aria-expanded', 'true');
+                // Expande o conteúdo baseado na altura real (scrollHeight)
+                content.style.maxHeight = content.scrollHeight + "px";
+                header.querySelector('.faq-icon').textContent = '−'; // Sinal de menos
             }
         });
     });
