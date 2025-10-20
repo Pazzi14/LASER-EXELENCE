@@ -3,26 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ | Dúvidas Frequentes | LASER-EXCELLENCE</title>
-    <meta name="description" content="Encontre respostas para as perguntas mais comuns sobre remoção de tatuagem, rejuvenescimento e tratamentos a laser na LASER-EXCELLENCE.">
-    
+    <title>FAQ - Perguntas Frequentes | LASER-EXCELLENCE</title>
+    <meta name="description" content="Encontre respostas para as perguntas mais comuns sobre nossos tratamentos a laser, agendamentos e cuidados.">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="manifest" href="manifest.json">
-    
     <link rel="icon" type="image/jpeg" href="FAVICON/unnamed.jpg">
     
     <script defer src="tracking.js"></script>
-    <script defer src="scroll-animations.js"></script>
 </head>
 <body>
+    
     <header>
         <a href="index.html" class="logo-link">
-            <img src="LOGOTIPO/unnamed.jpg" alt="Logotipo LASER-EXCELLENCE - Clínica de Tratamentos a Laser" class="header-logo">
+            <img src="LOGOTIPO/unnamed.jpg" alt="Logotipo LASER-EXCELLENCE" class="header-logo">
         </a>
         <nav>
             <button class="menu-toggle" aria-expanded="false" aria-controls="main-menu">Menu</button>
             <ul id="main-menu" role="menu">
+                <li><a href="index.html">Página Principal</a></li>
                 <li><a href="tratamentos.html">Tratamentos</a></li>
                 <li><a href="quem-somos.html">Quem Somos</a></li>
                 <li><a href="contato.html">Contato</a></li>
@@ -34,20 +33,42 @@
     </header>
 
     <main>
-        <section id="main-content">
-            <h1 class="animate-on-scroll">Dúvidas Frequentes (FAQ)</h1>
-            <p class="animate-on-scroll">Separamos as perguntas mais comuns para que você se sinta mais seguro e informado sobre nossos procedimentos.</p>
+        <section id="faq-section">
+            <h1 style="text-align: center;">Perguntas Frequentes</h1>
+
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <button class="faq-header" aria-expanded="false">
+                        O tratamento a laser é doloroso?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-content">
+                        <p>O nível de desconforto é mínimo e varia para cada pessoa e tratamento. Utilizamos sistemas de resfriamento avançados para garantir a máxima comodidade durante o procedimento, que costuma ser rápido.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-header" aria-expanded="false">
+                        Quantas sessões são necessárias para remoção de tatuagem?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-content">
+                        <p>O número de sessões depende de fatores como o tipo de tinta, a profundidade, a idade da tatuagem e a cor da pele. Durante sua avaliação gratuita, criaremos um plano de tratamento personalizado.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-header" aria-expanded="false">
+                        A avaliação com a especialista Marcela é gratuita?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-content">
+                        <p>Sim, a avaliação inicial com nossa especialista Marcela é totalmente gratuita. É o primeiro passo para entendermos suas necessidades e propormos o melhor caminho para o seu resultado.</p>
+                    </div>
+                </div>
+                
+                </div>
             
-            <div id="faq-list" class="animate-on-scroll">
-                <div class="faq-item">
-                    <h3 class="faq-question">O tratamento a laser é doloroso?</h3>
-                    <div class="faq-answer hidden"><p>A sensação é tolerável e comparada a "pequenos choques". Utilizamos resfriamento de pele para maximizar o conforto durante a sessão.</p></div>
-                </div>
-                <div class="faq-item">
-                    <h3 class="faq-question">Quantas sessões são necessárias para remoção total?</h3>
-                    <div class="faq-answer hidden"><p>Varia de 6 a 12 sessões, dependendo da cor, profundidade e tipo de tinta utilizada.</p></div>
-                </div>
-                </div>
         </section>
     </main>
     
@@ -60,23 +81,12 @@
         <p>Todos os direitos reservados a Tiago de Souza Lima Pazinatto.</p>
         <p>&copy; 2025 LASER-EXCELLENCE.</p>
     </footer>
-    
-    <div id="cookie-consent-banner" class="cookie-banner hidden">
-        <p>Utilizamos cookies para melhorar sua experiência e analisar o tráfego. Ao continuar, você concorda com nossa <a href="politica-privacidade.html">Política de Privacidade</a>.</p>
-        <div class="cookie-actions">
-            <button id="accept-cookies" class="cta-button">Aceitar Todos</button>
-            <button id="reject-cookies" class="secondary-button">Rejeitar</button>
-        </div>
-    </div>
-    
+
     <a href="https://api.whatsapp.com/send?phone=5511987654321&text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20minha%20avalia%C3%A7%C3%A3o%20gratuita." class="whatsapp-float" target="_blank" aria-label="Fale conosco pelo WhatsApp">
-        <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2C6.48 2 2 6.48 2 12c0 3.12 1.34 5.94 3.48 7.92L4 22l3.08-1.08c1.8-.6 3.84-.92 6.04-.92 5.52 0 10-4.48 10-10S17.52 2 12 2zm3.5 12.5c-.24.24-.52.36-.84.36-.32 0-.6-.12-.84-.36l-.88-.88c-.12-.12-.24-.36-.24-.6s.12-.48.24-.6l.88-.88c.24-.24.48-.36.72-.36.24 0 .48.12.72.36l.88.88c.12.12.24.36.24.6s-.12.48-.24.6l-.88.88zm-3-3c-.24-.24-.52-.36-.84-.36-.32 0-.6.12-.84.36l-.88.88c-.12.12-.24.36-.24.6s.12.48.24.6l.88.88c.24.24.48.36.72.36.24 0 .48-.12.72-.36l.88-.88c.12-.12.24-.36.24-.6s-.12-.48-.24-.6l-.88-.88z"/>
-        </svg>
+        <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12c0 3.12 1.34 5.94 3.48 7.92L4 22l3.08-1.08c1.8-.6 3.84-.92 6.04-.92 5.52 0 10-4.48 10-10S17.52 2 12 2zm3.5 12.5c-.24.24-.52.36-.84.36-.32 0-.6-.12-.84-.36l-.88-.88c-.12-.12-.24-.36-.24-.6s.12-.48.24-.6l-.88-.88c.24-.24.48-.36.72-.36.24 0 .48.12.72.36l.88.88c.12.12.24.36.24.6s-.12.48-.24.6l-.88.88zm-3-3c-.24-.24-.52-.36-.84-.36-.32 0-.6.12-.84.36l-.88.88c-.12.12-.24.36-.24.6s.12.48.24.6l-.88.88c.24.24.48.36.72.36.24 0 .48-.12.72-.36l-.88-.88c.12-.12.24-.36.24-.6s-.12-.48-.24-.6l-.88-.88z"/></svg>
     </a>
     
     <script src="faq-accordion.js"></script>
     <script src="script.js"></script>
-    <script src="futuristic-3d.js"></script>
 </body>
 </html>
